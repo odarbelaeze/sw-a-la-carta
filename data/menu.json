@@ -6,7 +6,7 @@
         "tipo": "entrada",
         "nombre": "Entrada a la entrada",
         "imagen": "/images/comidas/food-1373819_1280.jpg",
-        "valor": 5000
+        "valor": 3800
       },
       {
         "key": "entrada2",
@@ -20,28 +20,28 @@
         "tipo": "entrada",
         "nombre": "Pulpo a las brasas",
         "imagen": "/images/comidas/fried-chicken-250863_1280.jpg",
-        "valor": 5000
+        "valor": 7500
       },
       {
         "key": "fuerte1",
         "tipo": "fuerte",
         "nombre": "Naranja al limon",
         "imagen": "/images/comidas/brain-954821_1280.jpg",
-        "valor": 5000
+        "valor": 16500
       },
       {
         "key": "fuerte2",
         "tipo": "fuerte",
         "nombre": "Pollo a la naranja",
         "imagen": "/images/comidas/fried-chicken-250863_1280.jpg",
-        "valor": 5000
+        "valor": 21200
       },
       {
         "key": "fuerte3",
         "tipo": "fuerte",
         "nombre": "Pulpo a las brasas",
         "imagen": "/images/comidas/fried-chicken-250863_1280.jpg",
-        "valor": 8000
+        "valor": 23800
       }
     ]
   },

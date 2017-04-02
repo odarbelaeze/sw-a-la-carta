@@ -21,9 +21,10 @@ const Home = () => (
     </Link>
     </p>
     <p>
-      <Link to="/restaurante/restaurante1?mesa=mesa1">
-        Ir a mesa
-    </Link>
+      <Link to="/restaurante/restaurante1?mesa=mesa1">Ir a mesa</Link>
+    </p>
+    <p>
+      <Link to="/restaurante/restaurante1?mesa=mesa2">Ir a otra mesa</Link>
     </p>
   </div>
 );
