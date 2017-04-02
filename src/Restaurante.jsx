@@ -58,7 +58,7 @@ class Restaurante extends React.Component {
                     }}
                     key={item.key}
                   >
-                    <h2>{item.nombre}</h2>
+                    <h3>{item.nombre}</h3>
                     <p>{item.valor}</p>
                   </div>
                 ))}
