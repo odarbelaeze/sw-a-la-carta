@@ -21,7 +21,7 @@ const Home = () => (
     </Link>
     </p>
     <p>
-      <Link to="/restaurante/restaurante1/mesa/mesa1">
+      <Link to="/restaurante/restaurante1?mesa=mesa1">
         Ir a mesa
     </Link>
     </p>

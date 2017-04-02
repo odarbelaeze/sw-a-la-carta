@@ -16,6 +16,11 @@ class MenuItem extends React.Component {
         <div className="menu-item-info">
           <h3>{this.props.nombre}</h3>
           <p>{this.props.valor}</p>
+          {this.props.addItemToChart && (
+            <button onClick={this.props.addItemToChart}>
+              Agregar
+            </button>
+          )}
         </div>
       </div>
     )
@@ -27,6 +32,7 @@ MenuItem.propTypes = {
   imagen: React.PropTypes.string.isRequired,
   nombre: React.PropTypes.string.isRequired,
   valor: React.PropTypes.number.isRequired,
+  addItemToChart: React.PropTypes.func,
 };
 
 export {MenuItem};
@@ -34,11 +40,17 @@ export {MenuItem};
 
 class Menu extends React.Component {
   render() {
+    const { addItemToChart } = this.props;
     return (
       <div className="menu">
         <div className="menu-items">
           {_.map(this.props.items, item => (
-            <MenuItem key={item.key} {...item} />
+            <MenuItem
+              key={item.key}
+              addItemToChart={
+                _.isFunction(addItemToChart) ? () => addItemToChart(item.key) : null}
+              {...item}
+            />
           ))}
         </div>
       </div>
@@ -51,6 +63,7 @@ Menu.propTypes = {
   items: React.PropTypes.arrayOf(
     React.PropTypes.shape(MenuItem.propTypes)
   ).isRequired,
+  addItemToChart: React.PropTypes.func,
 };
 
 
