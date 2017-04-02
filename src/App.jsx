@@ -15,9 +15,16 @@ import './App.css';
 const Home = () => (
   <div className='home'>
     <h1>Pagina de inicio</h1>
-    <Link to="/restaurante/restaurante1">
-      Ir a restaurante
+    <p>
+      <Link to="/restaurante/restaurante1">
+        Ir a restaurante
     </Link>
+    </p>
+    <p>
+      <Link to="/restaurante/restaurante1/mesa/mesa1">
+        Ir a mesa
+    </Link>
+    </p>
   </div>
 );
 

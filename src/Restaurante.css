@@ -8,26 +8,14 @@
   padding: 20px;
 }
 
-.menu-items {
+.cuerpo {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 }
 
-.menu-item {
-  margin: 10px;
-  max-width: 500px;
-  min-width: 300px;
-  height: 300px;
-  color: white;
+@media(max-width: 960px) {
+.cuerpo {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  background-position: center;
 }
-
-
-.menu-item-info {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 10px;
 }

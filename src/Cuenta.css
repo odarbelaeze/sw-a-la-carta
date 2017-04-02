@@ -1,0 +1,6 @@
+.cuenta {
+  min-width: 300px;
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+}

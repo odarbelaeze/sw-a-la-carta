@@ -1,5 +1,7 @@
 import React from 'react';
+import {Route} from 'react-router-dom';
 import Menu from './Menu';
+import Cuenta from './Cuenta';
 
 import * as firebase from 'firebase';
 import _ from 'lodash';
@@ -8,6 +10,7 @@ import './Restaurante.css';
 
 
 class Restaurante extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +19,7 @@ class Restaurante extends React.Component {
         imagen: '',
         descripcion: '',
       },
-      menu: {}
+      menu: [],
     }
   }
 
@@ -47,7 +50,13 @@ class Restaurante extends React.Component {
           <h1>{this.state.restaurante.nombre}</h1>
           <p>{this.state.restaurante.descripcion}</p>
         </div>
-        <Menu items={this.state.menu} />
+        <div className="cuerpo">
+          <Route
+            path={`${this.props.match.url}/mesa/:mesaId`}
+            component={Cuenta}
+          />
+          <Menu items={this.state.menu} />
+        </div>
       </div>
     );
   }

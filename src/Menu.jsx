@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 
+import './Menu.css'
+
 
 class MenuItem extends React.Component {
   render() {
@@ -46,7 +48,9 @@ class Menu extends React.Component {
 
 
 Menu.propTypes = {
-  items: React.PropTypes.arrayOf(MenuItem.propTypes).isRequired,
+  items: React.PropTypes.arrayOf(
+    React.PropTypes.shape(MenuItem.propTypes)
+  ).isRequired,
 };
 
 
