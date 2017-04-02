@@ -1,0 +1,34 @@
+{
+    "menus": {
+        "restaurante1": {
+            "entradas": [
+                {
+                    "key": "entrada1",
+                    "nombre": "Entrada a la entrada",
+                    "imagen": "/images/comidas/food-1373819_1280.jpg",
+                    "valor": 5000
+                },
+                {
+                    "key": "entrada2",
+                    "nombre": "Entrada a la salida",
+                    "imagen": "/images/comidas/food-2094521_1280.jpg",
+                    "valor": 5000
+                },
+                {
+                    "key": "entrada3",
+                    "nombre": "Pulpo a las brasas",
+                    "imagen": "/images/comidas/fried-chicken-250863_1280.jpg",
+                    "valor": 5000
+                }
+
+            ]
+        }
+    },
+    "restaurantes": {
+        "restaurante1": {
+            "nombre": "Garuufa",
+            "descripcion": "El restaurante mas pupy de la region.",
+            "imagen": "/images/restaurantes/restaurant-738788_1920.jpg"
+        }
+    }
+}
