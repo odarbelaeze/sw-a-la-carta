@@ -1,4 +1,6 @@
 import React from 'react';
+import Menu from './Menu';
+
 import * as firebase from 'firebase';
 import _ from 'lodash';
 
@@ -45,27 +47,7 @@ class Restaurante extends React.Component {
           <h1>{this.state.restaurante.nombre}</h1>
           <p>{this.state.restaurante.descripcion}</p>
         </div>
-        <div className="menu">
-          {_.map(this.state.menu, (items, name) => (
-            <div className='menu-section'>
-              <h2>{name}</h2>
-              <div className="menu-items">
-                {_.map(items, item => (
-                  <div
-                    className="menu-item"
-                    style={{
-                      backgroundImage: `url(${item.imagen})`
-                    }}
-                    key={item.key}
-                  >
-                    <h3>{item.nombre}</h3>
-                    <p>{item.valor}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        <Menu items={this.state.menu} />
       </div>
     );
   }

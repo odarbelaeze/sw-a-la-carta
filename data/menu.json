@@ -1,34 +1,63 @@
 {
-    "menus": {
-        "restaurante1": {
-            "entradas": [
-                {
-                    "key": "entrada1",
-                    "nombre": "Entrada a la entrada",
-                    "imagen": "/images/comidas/food-1373819_1280.jpg",
-                    "valor": 5000
-                },
-                {
-                    "key": "entrada2",
-                    "nombre": "Entrada a la salida",
-                    "imagen": "/images/comidas/food-2094521_1280.jpg",
-                    "valor": 5000
-                },
-                {
-                    "key": "entrada3",
-                    "nombre": "Pulpo a las brasas",
-                    "imagen": "/images/comidas/fried-chicken-250863_1280.jpg",
-                    "valor": 5000
-                }
-
-            ]
+  "menus": {
+    "restaurante1": [
+      {
+        "key": "entrada1",
+        "tipo": "entrada",
+        "nombre": "Entrada a la entrada",
+        "imagen": "/images/comidas/food-1373819_1280.jpg",
+        "valor": 5000
+      },
+      {
+        "key": "entrada2",
+        "tipo": "entrada",
+        "nombre": "Entrada a la salida",
+        "imagen": "/images/comidas/food-2094521_1280.jpg",
+        "valor": 5000
+      },
+      {
+        "key": "entrada3",
+        "tipo": "entrada",
+        "nombre": "Pulpo a las brasas",
+        "imagen": "/images/comidas/fried-chicken-250863_1280.jpg",
+        "valor": 5000
+      },
+      {
+        "key": "fuerte1",
+        "tipo": "fuerte",
+        "nombre": "Naranja al limon",
+        "imagen": "/images/comidas/brain-954821_1280.jpg",
+        "valor": 5000
+      },
+      {
+        "key": "fuerte2",
+        "tipo": "fuerte",
+        "nombre": "Pollo a la naranja",
+        "imagen": "/images/comidas/fried-chicken-250863_1280.jpg",
+        "valor": 5000
+      },
+      {
+        "key": "fuerte3",
+        "tipo": "fuerte",
+        "nombre": "Pulpo a las brasas",
+        "imagen": "/images/comidas/fried-chicken-250863_1280.jpg",
+        "valor": 8000
+      }
+    ]
+  },
+  "restaurantes": {
+    "restaurante1": {
+      "nombre": "Garuufa",
+      "descripcion": "El restaurante mas pupy de la region.",
+      "imagen": "/images/restaurantes/restaurant-738788_1920.jpg",
+      "mesas": {
+        "mesa1": {
+          "nombre": "Mesa 1"
+        },
+        "mesa2": {
+          "nombre": "Mesa 2"
         }
-    },
-    "restaurantes": {
-        "restaurante1": {
-            "nombre": "Garuufa",
-            "descripcion": "El restaurante mas pupy de la region.",
-            "imagen": "/images/restaurantes/restaurant-738788_1920.jpg"
-        }
+      }
     }
+  }
 }
