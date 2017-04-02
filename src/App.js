@@ -17,6 +17,15 @@ const Restaurante = () => (
   </div>
 )
 
+const Mesa = ({match}) => (
+  <div className='mesa'>
+    <h1>Pagina de una mesa</h1>
+    <p>Opcionalmente podemos tener una navegacion</p>
+    <p>usted esta en una mesa</p>
+    <p>{match.params.mesaId}</p>
+  </div>
+);
+
 class App extends Component {
   render() {
     return (
@@ -24,6 +33,7 @@ class App extends Component {
         <div>
           <Route exact path='/' component={Home} />
           <Route path='/restaurante' component={Restaurante} />
+          <Route path='/mesa/:mesaId' component={Mesa} />
         </div>
       </Router>
     );
