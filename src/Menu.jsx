@@ -1,5 +1,7 @@
 import React from 'react';
+
 import _ from 'lodash';
+import numeral from 'numeral';
 
 import './Menu.css'
 
@@ -15,7 +17,7 @@ class MenuItem extends React.Component {
       >
         <div className="menu-item-info">
           <h3>{this.props.nombre}</h3>
-          <p>{this.props.valor}</p>
+          <p>{numeral(this.props.valor).format('$0,0')}</p>
           {this.props.addItemToChart && (
             <button onClick={this.props.addItemToChart}>
               Agregar

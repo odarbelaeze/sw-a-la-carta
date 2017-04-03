@@ -22,3 +22,7 @@
   border: 1px solid gray;
   border-radius: 10px;
 }
+
+.restaurante-admin .cuenta-lineas {
+  flex-grow: 1;
+}

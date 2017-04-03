@@ -1,6 +1,7 @@
 import React from 'react';
 
 import _ from 'lodash';
+import numeral from 'numeral';
 
 import './Cuenta.css';
 
@@ -104,7 +105,7 @@ class Cuenta extends React.Component {
           ))}
         </div>
         <div className="cuenta-total">
-          <h2>Total: {this.getTotal()}</h2>
+          <h2>Total: {numeral(this.getTotal()).format('$0,0')}</h2>
         </div>
         {this.props.cuenta && this.props.pagar && (
           <button
