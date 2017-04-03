@@ -99,6 +99,16 @@ class Restaurante extends React.Component {
     }
   }
 
+  removeItemFromChart(key) {
+    if (!this.state.cuenta) return;
+    const chartItemId = _.findKey(this.state.cuenta.items, val => val === key);
+    if (!chartItemId) return;
+    const { restaurantId } = this.props.match.params;
+    const { id } = this.state.cuenta;
+    const path = `cuentas/${restaurantId}/${id}/items/${chartItemId}`;
+    firebase.database().ref(path).remove();
+  }
+
   pagarCuenta() {
     if (!this.state.cuenta) return;
     const { restaurantId } = this.props.match.params;
@@ -122,6 +132,8 @@ class Restaurante extends React.Component {
             cuenta={this.state.cuenta}
             items={this.state.menu}
             pagar={this.pagarCuenta.bind(this)}
+            agregar={this.addItemToChart.bind(this)}
+            quitar={this.removeItemFromChart.bind(this)}
           />}
           <Menu
             items={this.state.menu}

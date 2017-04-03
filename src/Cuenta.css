@@ -2,5 +2,52 @@
   min-width: 300px;
   display: flex;
   margin: 10px;
+  padding: 10px;
   flex-direction: column;
+}
+
+.linea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.linea-imagen {
+  width: 4em;
+  height: 4em;
+  border-radius: 2em;
+  background-size: cover;
+}
+
+.linea-nombre {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.linea-controles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.linea-cuenta {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.linea-boton-agregar, .linea-boton-quitar {
+  font-weight: 400;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.linea-boton-agregar {
+  color: olivedrab;
+  border-color: olivedrab;
+}
+
+.linea-boton-quitar {
+  color: crimson;
+  border-color: crimson;
 }

@@ -5,17 +5,72 @@ import _ from 'lodash';
 import './Cuenta.css';
 
 
+class Linea extends React.PureComponent {
+  render() {
+    return (
+      <div className='linea'>
+        <div
+          className='linea-imagen'
+          style={{
+            backgroundImage: `url(${this.props.item.imagen})`
+          }}
+        />
+        <span className='linea-nombre'>
+          {this.props.item.nombre}
+        </span>
+        <span className="linea-controles">
+          {_.isFunction(this.props.quitar) && (
+            <button
+              className='linea-boton-quitar'
+              onClick={() => this.props.quitar(this.props.item.key)}
+            >
+              -
+            </button>
+          )}
+          <span className="linea-cuenta">
+            {this.props.count}
+          </span>
+          {_.isFunction(this.props.agregar) && (
+            <button
+              className='linea-boton-agregar'
+              onClick={() => this.props.agregar(this.props.item.key)}
+            >
+              +
+            </button>
+          )}
+        </span>
+      </div>
+    )
+  }
+}
+
+
+Linea.propTypes = {
+  item: React.PropTypes.shape({
+    imagen: React.PropTypes.string.isRequired,
+    nombre: React.PropTypes.string.isRequired,
+    key: React.PropTypes.string.isRequired,
+  }).isRequired,
+  count: React.PropTypes.number.isRequired,
+  agregar: React.PropTypes.func,
+  quitar: React.PropTypes.func,
+}
+
+
+export {Linea};
+
+
 class Cuenta extends React.Component {
 
   getLines() {
     if (!this.props.cuenta) return [];
-    return _.map(
+    return _.sortBy(_.map(
       _.countBy(this.props.cuenta.items, key => key),
       (count, key) => ({
         item: _.find(this.props.items, item => item.key === key),
         count
       })
-    );
+    ), line => line.item.key);
   }
 
   getTotal() {
@@ -27,25 +82,36 @@ class Cuenta extends React.Component {
   }
 
   render() {
+    const lines = this.getLines();
+    if (lines.length === 0) return (
+      <div className='cuenta'>
+        <p className='success'>
+          Agrega platos desde el menu para realizar tu pedido.
+        </p>
+      </div>
+    );
     return (
       <div className="cuenta">
-        <ul className="cuenta-lineas">
-          {_.map(this.getLines(), linea => (
-            <li className="cuenta-linea" key={linea.item.key}>
-              {`${linea.count} ${linea.item.nombre}`}
-            </li>
+        <div className="cuenta-lineas">
+          {_.map(lines, line => (
+            <Linea
+              {...line}
+              agregar={this.props.agregar}
+              quitar={this.props.quitar}
+              key={line.item.key}
+            />
           ))}
-        </ul>
+        </div>
         <div className="cuenta-total">
           <h2>Total: {this.getTotal()}</h2>
         </div>
         {this.props.cuenta && this.props.pagar && (
-          <div
-            className="cuenta-pagar"
+          <button
+            className='cuenta-pagar black'
             onClick={this.props.pagar}
           >
-            <button>Pagar</button>
-          </div>
+            Pagar
+           </button>
         )}
       </div>
     )
