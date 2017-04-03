@@ -7,6 +7,7 @@ import './Cuenta.css';
 
 class Linea extends React.PureComponent {
   render() {
+    if (!this.props.item) return null;
     return (
       <div className='linea'>
         <div

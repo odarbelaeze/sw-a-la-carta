@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Restaurante from './Restaurante';
+import RestauranteAdmin from './RestauranteAdmin';
 
 import * as firebase from 'firebase';
 
@@ -23,6 +24,9 @@ const Home = () => (
     </p>
     <p>
       <Link to='/restaurante/restaurante1?mesa=mesa2'>Ir a otra mesa</Link>
+    </p>
+    <p>
+      <Link to='/restaurante/restaurante1/admin'>Ir al admin del restaurante</Link>
     </p>
   </div>
 );
@@ -49,7 +53,8 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path='/' component={Home} />
-          <Route path='/restaurante/:restaurantId' component={Restaurante} />
+          <Route exact path='/restaurante/:restaurantId' component={Restaurante} />
+          <Route exact path='/restaurante/:restaurantId/admin' component={RestauranteAdmin} />
         </div>
       </Router>
     );

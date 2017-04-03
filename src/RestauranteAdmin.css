@@ -1,0 +1,24 @@
+.restaurante-admin .cuerpo {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.cuentas-activas, .cuentas-historial {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cuentas-historial {
+  opacity: 0.6;
+}
+
+.cuentas-historial .linea-imagen {
+  filter: grayscale();
+}
+
+.restaurante-admin .cuenta {
+  border: 1px solid gray;
+  border-radius: 10px;
+}
